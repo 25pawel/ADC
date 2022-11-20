@@ -35,7 +35,7 @@ extern "C" {
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
-#define DEBUGS(s)		printf(#s"\r\n")
+#define DEBUGS(s, ...)		printf(#s"\r\n", ##__VA_ARGS__)
 /* USER CODE END Private defines */
 
 void MX_USART2_UART_Init(void);
