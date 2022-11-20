@@ -1,8 +1,9 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
+  * @file    adc.h
+  * @brief   This file contains all the function prototypes for
+  *          the adc.c file
   ******************************************************************************
   * @attention
   *
@@ -16,17 +17,36 @@
   ******************************************************************************
   */
 /* USER CODE END Header */
+/* Define to prevent recursive inclusion -------------------------------------*/
+#ifndef __ADC_H__
+#define __ADC_H__
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "init.h"
-#include "adc.h"
 
-int main(void)
-{
-	initializeBoard();
+/* USER CODE BEGIN Includes */
 
-  while (1)
-  {
-	  measureVoltage();
-  }
+/* USER CODE END Includes */
+
+extern ADC_HandleTypeDef hadc1;
+
+/* USER CODE BEGIN Private defines */
+
+/* USER CODE END Private defines */
+
+void MX_ADC1_Init(void);
+
+/* USER CODE BEGIN Prototypes */
+void measureVoltage(void);
+/* USER CODE END Prototypes */
+
+#ifdef __cplusplus
 }
+#endif
+
+#endif /* __ADC_H__ */
+

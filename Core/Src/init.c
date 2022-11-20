@@ -9,6 +9,7 @@
 #include "usart.h"
 #include "gpio.h"
 #include "main.h"
+#include "adc.h"
 
 static void SystemClock_Config(void)
 {
@@ -66,6 +67,10 @@ void initializeBoard(void)
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
 	MX_USART2_UART_Init();
+	MX_ADC1_Init();
+
+	// Calibration of ADC converter
+	HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
 
     HAL_Delay(50);
 	DEBUGS("Initialization of the device");
